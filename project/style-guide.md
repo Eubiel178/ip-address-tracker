@@ -19,6 +19,7 @@ The designs were created to the following widths:
 - Font size (text input): 18px
 
 ### Font
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
 - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
 - Weights: 400, 500, 700
