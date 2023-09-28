@@ -116,29 +116,27 @@ const App = () => {
             </SearchButton>
           </FormContainer>
 
-          {searchResultState.query !== undefined && (
-            <InfoContainer>
-              <FirstInfoBox>
-                <InfoBoxTitle>IP ADDRESS</InfoBoxTitle>
-                <InfoBoxText>{searchResultState.query}</InfoBoxText>
-              </FirstInfoBox>
+          <InfoContainer>
+            <FirstInfoBox>
+              <InfoBoxTitle>IP ADDRESS</InfoBoxTitle>
+              <InfoBoxText>{searchResultState.query}</InfoBoxText>
+            </FirstInfoBox>
 
-              <InfoBox>
-                <InfoBoxTitle>LOCATION</InfoBoxTitle>
-                <InfoBoxText>{searchResultState.city}</InfoBoxText>
-              </InfoBox>
+            <InfoBox>
+              <InfoBoxTitle>LOCATION</InfoBoxTitle>
+              <InfoBoxText>{searchResultState.city}</InfoBoxText>
+            </InfoBox>
 
-              <InfoBox>
-                <InfoBoxTitle>TIMEZONE</InfoBoxTitle>
-                <InfoBoxText>{searchResultState.timezone}</InfoBoxText>
-              </InfoBox>
+            <InfoBox>
+              <InfoBoxTitle>TIMEZONE</InfoBoxTitle>
+              <InfoBoxText>{searchResultState.timezone}</InfoBoxText>
+            </InfoBox>
 
-              <LastInfoBox>
-                <InfoBoxTitle>ISP</InfoBoxTitle>
-                <InfoBoxText>{searchResultState.isp}</InfoBoxText>
-              </LastInfoBox>
-            </InfoContainer>
-          )}
+            <LastInfoBox>
+              <InfoBoxTitle>ISP</InfoBoxTitle>
+              <InfoBoxText>{searchResultState.isp}</InfoBoxText>
+            </LastInfoBox>
+          </InfoContainer>
         </HeaderContainer>
 
         <Map id="map" center={markerPosition} zoom={15} minZoom={5}>
