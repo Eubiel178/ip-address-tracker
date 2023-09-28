@@ -6,7 +6,7 @@ const api = axios.create({
 
 export const getIpInfo = async (ip) => {
   try {
-    const { data } = await api.get(ip);
+    const { data } = await api.post(ip);
 
     return data;
   } catch (error) {
