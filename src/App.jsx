@@ -103,6 +103,7 @@ const App = () => {
             <SearchButton
               type="button"
               onClick={() => handleIpInfo(inputValue)}
+              aria-label="search: ip or domain"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
                 <path
