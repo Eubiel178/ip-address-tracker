@@ -48,7 +48,7 @@ const App = () => {
       try {
         const response = await getIpInfo(ip);
 
-        map.setView([response.lat, response.lon], 14);
+        map.setView([response.loc.split(",")], 14);
         setSearchResultState(response);
       } catch (error) {
         Swal.fire({
@@ -116,27 +116,29 @@ const App = () => {
             </SearchButton>
           </FormContainer>
 
-          <InfoContainer>
-            <FirstInfoBox>
-              <InfoBoxTitle>IP ADDRESS</InfoBoxTitle>
-              <InfoBoxText>{searchResultState.query}</InfoBoxText>
-            </FirstInfoBox>
+          {searchResultState.ip !== undefined && (
+            <InfoContainer>
+              <FirstInfoBox>
+                <InfoBoxTitle>IP ADDRESS</InfoBoxTitle>
+                <InfoBoxText>{searchResultState.ip}</InfoBoxText>
+              </FirstInfoBox>
 
-            <InfoBox>
-              <InfoBoxTitle>LOCATION</InfoBoxTitle>
-              <InfoBoxText>{searchResultState.city}</InfoBoxText>
-            </InfoBox>
+              <InfoBox>
+                <InfoBoxTitle>LOCATION</InfoBoxTitle>
+                <InfoBoxText>{searchResultState.city}</InfoBoxText>
+              </InfoBox>
 
-            <InfoBox>
-              <InfoBoxTitle>TIMEZONE</InfoBoxTitle>
-              <InfoBoxText>{searchResultState.timezone}</InfoBoxText>
-            </InfoBox>
+              <InfoBox>
+                <InfoBoxTitle>TIMEZONE</InfoBoxTitle>
+                <InfoBoxText>{searchResultState.timezone}</InfoBoxText>
+              </InfoBox>
 
-            <LastInfoBox>
-              <InfoBoxTitle>ISP</InfoBoxTitle>
-              <InfoBoxText>{searchResultState.isp}</InfoBoxText>
-            </LastInfoBox>
-          </InfoContainer>
+              <LastInfoBox>
+                <InfoBoxTitle>ISP</InfoBoxTitle>
+                <InfoBoxText>{searchResultState.org}</InfoBoxText>
+              </LastInfoBox>
+            </InfoContainer>
+          )}
         </HeaderContainer>
 
         <Map id="map" center={markerPosition} zoom={15} minZoom={5}>

@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://ip-api.com/json/",
+  baseURL: "https://ipinfo.io/",
 });
 
 export const getIpInfo = async (ip) => {
   try {
-    const { data } = await api.post(ip);
+    const { data } = await api.get(ip + "?token=4fb2f467b3f6a6");
 
     return data;
   } catch (error) {
