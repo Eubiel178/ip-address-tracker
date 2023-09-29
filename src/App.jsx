@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
-import { TileLayer, Marker, Popup } from "react-leaflet";
+import { TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { UseMapComponents } from "./hooks/leafletHook.";
@@ -152,9 +152,7 @@ const App = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="http://mt3.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}"
           />
-          <Marker position={markerPosition} icon={customIcon}>
-            <Popup>Marcador em {searchResultState.city}</Popup>
-          </Marker>
+          <Marker position={markerPosition} icon={customIcon}></Marker>
         </Map>
       </PageContainer>
     </>
